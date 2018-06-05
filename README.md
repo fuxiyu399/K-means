@@ -9,14 +9,15 @@ ML-learning report about K-means
 聚类是一种无监督的学习，它将相似的对象归到同一簇中，类似全自动分类。簇内的对象越相似，聚类的效果越好。K-均值聚类是每个类别簇都是采用簇中所含值的均值计算而成。聚类与分类的区别在于分类前目标已知，而聚类为无监督分类。 
 
 聚类把不相似的对象归到不同簇，相似度取决于选择的相似度计算方法：
-1.欧式距离（edclidean distance）：
+
+### 1.欧式距离（edclidean distance）：
 两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的欧式距离
 ![image](https://github.com/fuxiyu399/K-means/blob/master/oushi-d.png)
-2.曼哈顿距离（Manhattan distance）：
+### 2.曼哈顿距离（Manhattan distance）：
 两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的曼哈顿距离
 ![image](https://github.com/fuxiyu399/K-means/blob/master/mahadun-d.png)
 
-3.马氏距离（mahalanobis distance）：
+### 3.马氏距离（mahalanobis distance）：
 马氏距离定义：
 有M个样本向量x1~xm，协方差矩阵记为S,均值记为u，其中样本向量X到u的距离为：
 ![image](https://github.com/fuxiyu399/K-means/blob/master/mashi-d1.png)
@@ -64,6 +65,6 @@ K-means聚类算法
 
 参考文献：
 
-1.《及其学习实战》 Peter harrington 中国工信出版社
-2.csdn博客：【机器学习实战-python3】K-均值聚类算法
+1.《及其学习实战》 Peter harrington 中国工信出版社</br>
+2.csdn博客：【机器学习实战-python3】K-均值聚类算法</br>
 3.csdn博客：机器学习相似度度量
