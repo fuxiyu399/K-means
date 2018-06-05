@@ -9,8 +9,10 @@ ML-learning report about K-means
 聚类把不相似的对象归到不同簇，相似度取决于选择的相似度计算方法：
 </br>
 >> 1.欧式距离（edclidean distance）：</br>
-两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的欧式距离</br>
-![image=]</br>
+两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的欧式距离
+</br>
+![image](https://github.com/fuxiyu399/K-means/blob/master/oushi-d.png)
+</br>
 >> 2.曼哈顿距离（Manhattan distance）：</br>
 两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的曼哈顿距离</br>
 ![image=]</br>
@@ -21,7 +23,6 @@ ML-learning report about K-means
 >>> 其中向量xi与xj之间的距离为：</br>
 ![image=]</br>
 另外还有切比雪夫距离，闵可夫斯基距离，标准欧式距离等等，在这里不多赘述。</br>
-可以在[曦曦慕慕的博客](https://blog.csdn.net/u010059070/article/details/76855929)了解！</br>
 ## K-means聚类算法
 </br>
 伪代码：</br>
