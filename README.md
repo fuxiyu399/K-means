@@ -11,13 +11,17 @@ ML-learning report about K-means
 >> 1.欧式距离（edclidean distance）：</br>
 两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的欧式距离
 </br>
+![image](https://github.com/fuxiyu399/K-means/blob/master/oushi-d.png)</br>
 </br>
 >> 2.曼哈顿距离（Manhattan distance）：</br>
 两个n维向量a（x11,x12,...,x1n）与b（x21,x22,...,x2n）的曼哈顿距离</br>
+![image](https://github.com/fuxiyu399/K-means/blob/master/mahadun-d.png)</br>
 >> 3.马氏距离（mahalanobis distance）：</br>
 >>> 马氏距离定义：</br>
 有M个样本向量x1~xm，协方差矩阵记为S,均值记为u，其中样本向量X到u的距离为：</br>
+![image](https://github.com/fuxiyu399/K-means/blob/master/mashi-d1.png)</br>
 >>> 其中向量xi与xj之间的距离为：</br>
+![image](https://github.com/fuxiyu399/K-means/blob/master/mashi-d2.png)</br>
 另外还有切比雪夫距离，闵可夫斯基距离，标准欧式距离等等，在这里不多赘述。</br>
 ## K-means聚类算法
 </br>
@@ -34,12 +38,14 @@ ML-learning report about K-means
  基本功能函数：数据加载函数，距离计算，初始化k个中心：</br>
  K-均值聚类算法接收4个参数，两个必要参数为数据集和k的值，另外两个为距离计算函数和初始化函数（可修改）。算法采用`计算质心-分配-重新计算质心`反复迭代的方式，直到所有点的分配结果不再改变。设置flag为clusterChange=True。</br>
  下图给出一个聚类结果示意图：</br>
+ ![image](https://github.com/fuxiyu399/K-means/blob/master/p1.jpg)</br>
  ## 聚类算法的缺陷及如何提高聚类性能</br>
  缺陷：</br>
  >>> 1.簇的数目k是用户预先定义的参数，如何选择正确的k是很大的问题</br>
  >>> 2.k-均值算法收敛到局部最小值，而不是全局最小值</br>
  提高聚类性能：</br>
  由于执行随机初始化导致K-均值收敛效果较差</br>
+ ![image](https://github.com/fuxiyu399/K-means/blob/master/p2.jpg)</br>
  一种评价聚类效果的方法是SSE（Sum of Squared Error）误差平方和的方法，取平方的结果是使得远离中心的点变得更加突出。 
 一种降低SSE的方法是增加簇的个数，即提高k值，但是违背了聚类的目标，聚类的目标是在不改变簇数目的前提下提高簇的质量。可选的改进的方法是对生成的簇进行后处理，将最大SSE值的簇划分成两个（K=2的K-均值算法），然后再进行相邻的簇合并。具体方法有两种：1、合并最近的两个质心（合并使得SSE增幅最小的两个质心）2、遍历簇 合并两个然后计算SSE的值，找到使得SSE最小的情况。
 </br>
@@ -50,6 +56,8 @@ ML-learning report about K-means
 在代码中:</br>
 函数biKmeans是上面二分K-均值聚类算法的实现，首先创建clusterAssment储存数据集中每个点的分类结果和平方误差，用centList保存所有已经划分的簇，初始状态为整个数据集。while循环不停对簇进行划分，寻找使得SSE值最大程度减小的簇并更新，添加新的簇到centList中。
 </br>
+运行二分K-均值算法后的簇分配示意图，该算法总是产生较好的聚类效果</br>
+![image](https://github.com/fuxiyu399/K-means/blob/master/p3.jpg)</br>
 ## 参考文献：</br>
 1.《及其学习实战》 Peter harrington 中国工信出版社</br>
 2.csdn博客：【机器学习实战-python3】K-均值聚类算法</br>
